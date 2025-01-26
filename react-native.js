@@ -9,6 +9,7 @@ module.exports = {
       'plugin:react/recommended',
       'plugin:react-native/all',
       'plugin:prettier/recommended',
+      "unused-imports"
     ],
     plugins: [
       'react',
@@ -41,7 +42,16 @@ module.exports = {
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
       '@typescript-eslint/explicit-function-return-type': ['warn', { allowExpressions: true }],
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      "unused-imports/no-unused-imports": "error",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/strict-boolean-expressions': 'warn',
       '@typescript-eslint/no-floating-promises': 'warn',
